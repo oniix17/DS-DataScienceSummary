@@ -12,8 +12,14 @@
 >* RF（基于**并行集成**决策树）
 >* GBDT/XGBoost/LightGBM（基于**串行集成**决策树）
 
-* 信息熵（entropy）：度量样本集合的**纯度**
-	* 假设数据集D有x类，其中第k类占比为$d_k$
+* 信息熵（entropy）：描述信息**不确定性**的值（也为**信息量**的值，该值越小纯度越高）
+> 假设数据集D有x类，其中第k类占比为 $p_k$，则信息熵公式为
+>$$entropy(D)=-\sum_{i=1}^{x}p_i log_2(p_i)$$
+> 信息熵的最小值为0（不确定度最小，纯度最高，概率要么为1要么为0），信息熵最大为 $log_2|x| $（均匀分布）
+* 信息增益（Information Gain）：选择某个属性进行划分时信息熵的变化
+> $$Gain(D,A)=entropy(D)-entropy(D|A)$$
+> $$=-entropy(D)-\sum_{i=1}^{v}\frac{|D_v|}{|D|} entropy(D_v)$$
+> 其中entropy(D|A)为特征A给定条件下D的经验**条件熵**（A的取值为{ $a_1,a_2,...,a_v$ }, $D_v$ 为D中A属性为 $a_v$ 的集合）
 
 # GBDT (Gradient Boosting Decision Tree)
 * GBDT中的决策树为回归树
