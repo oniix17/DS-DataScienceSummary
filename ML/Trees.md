@@ -107,7 +107,7 @@ $$L=\sum_{i=1}^nl(y_i,F(x_i))$$
 * XGBoost考虑了缺失值或稀疏0值的处理：稀疏感知（将稀疏0值和缺失值都视为缺失，节点分裂时固定这些值，而只考虑非缺失值的切分）。
 * XGBoost基于一阶导和二阶导，而GBDT只基于一阶导。
 
-![Image text]([https://github.com/oniix17/InterviewPreparation/blob/main/images/XGBoost1.jpg])
+![image](https://github.com/oniix17/InterviewPreparation/blob/main/images/XGBoost1.jpg)
 
 
 
