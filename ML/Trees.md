@@ -89,11 +89,11 @@ $$L=\sum_{i=1}^nl(y_i,F(x_i))$$
 
 ### 与随机森林的异同点
 相同点
->* 都是通过决策树集成进行构建
+* 都是通过决策树集成进行构建
 不同点
->* 随机森林使用bagging构建树模型，而GBDT使用boosting构建树模型（随机森林可以并行生成而GBDT只能串行生成）
->* 随机森林对于异常值不如GBDT敏感
->* 随机森林降低方差而GBDT降低偏差（也跟bagging和boosting的构成相关）
+* 随机森林使用bagging构建树模型，而GBDT使用boosting构建树模型（随机森林可以并行生成而GBDT只能串行生成）
+* 随机森林对于异常值不如GBDT敏感
+* 随机森林降低方差而GBDT降低偏差（也跟bagging和boosting的构成相关）
 
 # XGBoost
 ### 与GBDT的异同点：
