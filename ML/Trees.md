@@ -70,7 +70,7 @@ $$IV(A)=-\sum_{i=1}^{v}\frac{|D_v|}{|D|}log_2\frac{|D_v|}{|D|}$$
 <br>
 
 # 梯度提升决策树 GBDT (Gradient Boosting Decision Tree) 
-又称为MART(Multiple Additive Regression Tree) ，由多棵决策树*串行训练*生成（boosting）。基分类器层层叠加，对于上一层错误分类的样本给予更高的权重（boosting基学习器之间存在强依赖，而bagging基学习器之间基本不存在强依赖）；测试时也是将样本加权得到最终结果（这里和bagging类似）。
+又称为MART(Multiple Additive Regression Tree) ，由多棵决策树*串行训练*生成（boosting）。基分类器层层叠加，对于上一层错误分类的样本给予更高的权重（boosting基学习器之间存在强依赖，而bagging基学习器之间基本不存在强依赖）；预测时将样本直接相加或加权得到最终结果。
 
 ### GBDT原理：
 > 弱分类器结果相加为最终结果。
@@ -94,5 +94,17 @@ $$L=\sum_{i=1}^nl(y_i,F(x_i))$$
 >* 随机森林使用bagging构建树模型，而GBDT使用boosting构建树模型（随机森林可以并行生成而GBDT只能串行生成）
 >* 随机森林对于异常值不如GBDT敏感
 >* 随机森林降低方差而GBDT降低偏差（也跟bagging和boosting的构成相关）
+
+# XGBoost
+### 与GBDT的异同点：
+相同点：
+* 二者都是加法模型，都在每一步中都只更新当前步的子模型。
+不同点：
+* XGBoost采用了列采样（每一次划分时都只考虑部分特征）而GBDT没有。
+* XGBoost采用了正则项（对于当前步的子树进行，例如子树的叶结点个数，叶结点的回归值构成的向量（L2 norm））而GBDT没有。
+* XGBoost考虑了缺失值或稀疏0值的处理：稀疏感知（将稀疏0值和缺失值都视为缺失，节点分裂时固定这些值，而只考虑非缺失值的切分）。
+* XGBoost基于一阶导和二阶导，而GBDT只基于一阶导。
+
+
 
 [1]https://www.showmeai.tech/article-detail/190
