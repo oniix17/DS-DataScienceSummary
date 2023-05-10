@@ -96,6 +96,10 @@ $$L=\sum_{i=1}^nl(y_i,F(x_i))$$
 * 随机森林对于异常值不如GBDT敏感
 * 随机森林降低方差而GBDT降低偏差（也跟bagging和boosting的构成相关）
 
+<br>
+<br>
+<br>
+
 # XGBoost
 ### 与GBDT的异同点：
 相同点：
@@ -105,9 +109,11 @@ $$L=\sum_{i=1}^nl(y_i,F(x_i))$$
 * XGBoost采用了列采样（每一次划分时都只考虑部分特征）而GBDT没有。
 * XGBoost采用了正则项（对于当前步的子树进行，例如子树的叶结点个数，叶结点的回归值构成的向量（L2 norm））而GBDT没有。
 * XGBoost考虑了缺失值或稀疏0值的处理：稀疏感知（将稀疏0值和缺失值都视为缺失，节点分裂时固定这些值，而只考虑非缺失值的切分）。
+* XGBoost的列块设计能有效支持并行运算，效率更优。
 * XGBoost基于一阶导和二阶导，而GBDT只基于一阶导。
 
 ![image](https://github.com/oniix17/InterviewPreparation/blob/main/images/XGBoost1.jpg)
+![image](https://github.com/oniix17/InterviewPreparation/blob/main/images/XGBoost2.jpg)
 
 
 
