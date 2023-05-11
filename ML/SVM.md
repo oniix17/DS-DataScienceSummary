@@ -3,6 +3,8 @@
 
 ### 常用核函数
 
+### LR和SVM的区别
+
 
 ![image](https://github.com/oniix17/InterviewPreparation/blob/main/images/SVM1.jpg)
 ![image](https://github.com/oniix17/InterviewPreparation/blob/main/images/SVM2.jpg)
