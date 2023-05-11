@@ -13,8 +13,6 @@ $$r_{ik}=
 1& {k=argmin_l||x_i-z_l||^2}\\
 0& {otherwise}
 \end{cases}$$
-\end{CJK*}
-\end{document}
-$$
+
 * 直到中心点和数据点都不再发生变化
 * 
