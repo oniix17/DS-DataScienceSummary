@@ -116,6 +116,10 @@ Leetcode 1165 单行键盘（hash）
 ### 2023.5.22
 Leetcode 1100 长度为 K 的无重复字符子串（滑动窗口）
 
+### 2023.5.27
+Leetcode 剑指 Offer 05 替换空格
+* python替换：replace(a,b) 将a替换成b
+
 
 
 
